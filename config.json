@@ -1,0 +1,6 @@
+{
+  "queries": {
+     "name_query" : "select * from cq where time >= now() -5m limit 1"
+    }
+}
+
