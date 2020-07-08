@@ -1,6 +1,7 @@
 {
   "queries": {
-     "name_query" : "select * from cq where time >= now() -5m limit 1"
+     "second_query" : "select * from \"http\" where time >= now() -10m",
+     "name_query" : "select * from cq where time >= now() -5m"
     }
 }
 
