@@ -31,10 +31,10 @@ func get_query(host, database, query string) string {
     c, err := client.NewHTTPClient(client.HTTPConfig{
             Addr: "http://" + host,
     })
+    defer c.Close()
     if err != nil {
         panic(err.Error())
     }
-    defer c.Close()
     q := client.NewQuery(query, database, "")
     response, err := c.Query(q)
     if err !=nil {
