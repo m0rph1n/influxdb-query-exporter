@@ -34,6 +34,7 @@ func get_query(host, database, query string) string {
     if err != nil {
         panic(err.Error())
     }
+    defer c.Close()
     q := client.NewQuery(query, database, "")
     response, err := c.Query(q)
     if err !=nil {
