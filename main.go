@@ -5,7 +5,6 @@ import (
     "github.com/influxdata/influxdb1-client/v2"
     "fmt"
     "io/ioutil"
-//    "os"
     "encoding/json"
     "net/http"
 )
@@ -80,12 +79,4 @@ func main() {
     }
     http.HandleFunc("/metrics", message)
     http.ListenAndServe(listen, nil)
-//    http.HandleFunc("/metrics", func(w http.ResponseWriter, r *http.Request) {
-//    for key := range result["queries"] {
-//        query := result["queries"][key]
-//        get_query(host, database, query)
-//        fmt.Fprintf(w, key + "\t" + get_query(host, database, query) + "\n")
-//        }
-//    })
-//    http.ListenAndServe(listen, nil)
 }

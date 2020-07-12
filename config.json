@@ -1,7 +1,7 @@
 {
     "queries": {
         "_internal": {
-            "first_internal" : "select * from \"http\" where time >= now() -10m",
+            "first_internal" : "select mean(\"queryOk\") from (select * from cq where time >= now() -5m)",
             "second_internal" : "select * from cq where time >= now() -5m"
         }
     }
