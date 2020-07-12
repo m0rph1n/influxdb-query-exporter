@@ -71,7 +71,9 @@ func main() {
             query_json := queries[database].(map[string]interface{})
 	    for query := range query_json {
 	        query_str := fmt.Sprintf("%v", query_json[query])
-		responseText += fmt.Sprintf("influxdb_result_query{database=\"%s\", query_name=\"%s\"} %s\n", database, query, get_query(host, database, query_str))
+		if get_query(host, database, query_str) != "" {
+	            responseText += fmt.Sprintf("influxdb_result_query{database=\"%s\", query_name=\"%s\"} %s\n", database, query, get_query(host, database, query_str))
+		}
 	    }
         fmt.Fprintf(w, responseText)
         responseText = ""

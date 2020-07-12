@@ -2,7 +2,11 @@
     "queries": {
         "_internal": {
             "first_internal" : "select mean(\"queryOk\") from (select * from cq where time >= now() -5m)",
-            "second_internal" : "select * from cq where time >= now() -5m"
-        }
+            "second_internal" : "select * from cq where time >= now() -5m",
+            "thrith_internal" : "select * from http"
+        },
+	"test": {
+	    "test_query": "select time, value from cpu"
+	}
     }
 }
